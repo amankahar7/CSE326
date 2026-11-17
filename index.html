@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A student project connecting mobility aid requests with community support.">
+  <title>MoveTogether | Community mobility project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">move<span>together+</span></a>
+      <div class="links"><a href="#needs">Open needs</a><a href="#about">About</a><a href="#contact">Contact</a><button class="text-button" type="button" data-account="Login">Login</button><button type="button" data-account="Sign up">Sign up</button></div>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="wrap hero" id="home">
+      <div>
+        <p class="tag">A community mobility project</p>
+        <h1>Share a mobility aid.<br>Help someone <span>move forward.</span></h1>
+        <p>Help someone move through everyday life with more comfort and independence. Find a need, share an aid, make a difference.</p>
+        <div class="actions"><a class="button" href="#needs">Explore open needs</a><a href="#request">Request an aid</a></div>
+      </div>
+      <figure><img src="hero.jpg" width="1104" height="912" fetchpriority="high" decoding="async" alt="A caregiver with an older woman in a wheelchair"><figcaption>Mobility means more freedom, every day.</figcaption></figure>
+    </section>
+    <section class="wrap" id="needs">
+      <p class="tag">The community board</p>
+      <h2>Find a need you can support</h2>
+      <p>Explore fictional sample requests. Choose an aid to try the support form.</p>
+      <img class="aid-photo" src="https://framerusercontent.com/assets/mPSWSfX299EnB5jnbDA2P3bZFg.png" width="1536" height="1024" loading="lazy" decoding="async" alt="A wheelchair, forearm crutches and a walking frame">
+      <div class="search-row" role="search" aria-label="Find a mobility aid"><input id="search" type="search" placeholder="Search wheelchair, crutches or walker" aria-label="Search requests"><button id="searchButton" type="button">Search</button><button id="clear" type="button" hidden>Clear search</button></div>
+      <p class="note" id="count" role="status">3 sample requests</p>
+      <div class="cards">
+        <article class="card">
+          
+          <div class="card-body"><small>Open request</small><h3>Standard wheelchair</h3><p>Support for safer movement at home, college and around the community.</p><button data-aid="Wheelchair" aria-label="Support the wheelchair request" type="button">Support this need</button></div>
+        </article>
+        <article class="card">
+          
+          <div class="card-body"><small>Open request</small><h3>Walking crutches</h3><p>Extra balance for someone rebuilding confidence while walking.</p><button data-aid="Crutches" aria-label="Support the crutches request" type="button">Support this need</button></div>
+        </article>
+        <article class="card">
+          
+          <div class="card-body"><small>Open request</small><h3>Walker</h3><p>A stable walking aid to make short everyday journeys more comfortable.</p><button data-aid="Walker" aria-label="Support the walker request" type="button">Support this need</button></div>
+        </article>
+      </div>
+      <p id="empty" hidden>No matching requests. Try a different search.</p>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <h2>A small step starts here</h2>
+        <p class="note">College demo only. Use fictional details; nothing is sent online.</p>
+        <div class="form-options">
+          <details id="donate"><summary>Give support</summary><form id="donationForm">
+          <h3>I’d like to help</h3>
+          <label>Your name<input name="name" autocomplete="name" required placeholder="Enter your name"></label>
+          <label>I can support<select name="aid" id="donationAid" required><option value="">Choose an option</option><option>Wheelchair</option><option>Crutches</option><option>Walker</option><option>Fitting or delivery support</option></select></label>
+          <label>Email or phone<input name="contact" required placeholder="How can we contact you?"></label>
+          <button type="submit">Save my interest</button>
+          <p class="message" role="status"></p>
+        </form></details>
+          <details id="request"><summary>Request an aid</summary><form id="aidRequestForm">
+        <h3>Request support</h3>
+        <label>Your name<input name="name" autocomplete="name" required placeholder="Enter your name"></label>
+        <label>Aid needed<select name="aid" required><option value="">Select an aid</option><option>Wheelchair</option><option>Crutches</option><option>Walker</option><option>Other / Not sure</option></select></label>
+        <label>Town or area<input name="area" required placeholder="Your town or area"></label>
+        <label>Email or phone<input name="contact" required placeholder="Your contact details"></label>
+        <button type="submit">Save request</button><p class="message" role="status"></p>
+      </form></details>
+          <details id="handover"><summary>Record a handover</summary><form id="handoverRecords">
+          <h3>Handover record</h3>
+          <label>Item handed over<input name="item" required placeholder="e.g. Wheelchair"></label>
+          <label>Handover date<input name="date" type="date" required></label>
+          <label class="check"><input name="verified" type="checkbox" required> I confirm the handover is complete</label>
+          <button type="submit">Save handover</button><p class="message" role="status"></p>
+        </form></details>
+        </div>
+      </div>
+    </section>
+    <section class="wrap info-grid" aria-label="About and contact">
+      <div id="about"><p class="tag">About MoveTogether</p><h2>A student project, built around care.</h2><p>This college frontend project explores a simple idea: connecting people who need mobility aids with people willing to help.</p><p class="note">Demo journey: share a need, check the fit, arrange support, confirm handover.</p></div>
+      <div id="contact"><p class="tag">Contact</p><h2>Have a question?</h2><p>Try the demo message form. It saves locally and does not contact an organisation.</p>
+        <details id="contact-panel"><summary>Write a demo message</summary>
+          <form id="contactMessages">
+            <label>Your name<input name="name" autocomplete="name" required></label>
+            <label>Your email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Message<textarea name="message" rows="3" maxlength="500" required placeholder="Use fictional details"></textarea></label>
+            <button type="submit">Save demo message</button><p class="message" role="status"></p>
+          </form>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <a class="brand" href="#home">move<span>together+</span></a>
+    <nav class="footer-links" aria-label="Footer navigation"><a href="#home">Back to top</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <small>MoveTogether · College demonstration · Fictional requests</small>
+    <p class="note">Entries are stored only in this browser. No payments, real requests or messages are sent.</p>
+    <button class="text-button" id="deleteData" type="button">Clear saved demo entries</button><p class="message" id="deleteMessage" role="status"></p>
+  </footer>
+  <!-- Demo dialogs: no accounts, passwords or AI service. -->
+  <dialog id="accountDialog" aria-labelledby="accountTitle" aria-describedby="accountNote">
+    <button class="close" type="button" data-close aria-label="Close account demo">Close</button>
+    <h2 id="accountTitle">Login</h2>
+    <p class="note" id="accountNote">Display-only college demo. No account is created. Do not enter real details.</p>
+    <form id="accountDemo">
+      <label>Demo email<input name="email" type="email" placeholder="student@example.com" required></label>
+      <button type="submit" id="accountAction">Try Login demo</button>
+      <p class="message" role="status"></p>
+    </form>
+  </dialog>
+  <button id="helpButton" type="button" aria-haspopup="dialog" aria-controls="helpDialog">AI help · Demo</button>
+  <dialog id="helpDialog" aria-labelledby="helpTitle">
+    <button class="close" type="button" data-close aria-label="Close help">Close</button>
+    <h2 id="helpTitle">MoveTogether helper</h2>
+    <p class="note">Preset answers only — not a real AI chatbot.</p>
+    <div class="help-questions">
+      <button type="button" data-help="Choose a card’s Support this need button. The support form opens with that aid selected.">How do I help?</button>
+      <button type="button" data-help="Open Request an aid below the cards, complete the demo form and save it in this browser.">How do I request an aid?</button>
+      <button type="button" data-help="No. Requests are fictional. Forms save only in your browser and do not send anything online.">Is this a real service?</button>
+    </div>
+    <p id="helpAnswer" role="status">Choose a question above.</p>
+    <a class="button" href="#contact" id="helpContact">Contact section</a>
+  </dialog>
+</body>
+</html>
